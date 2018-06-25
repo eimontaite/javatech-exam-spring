@@ -87,6 +87,16 @@ public class InstitutionService {
 		jpaInstitutionRepository.delete(institutionId);
 	}
 
+	public void updateInstitution(long institutionId, Institution institution) {
+		Institution oldInstitution = jpaInstitutionRepository.findOne(institutionId);
+		oldInstitution.setCategory(institution.getCategory());
+		oldInstitution.setCity(institution.getCity());
+		oldInstitution.setImage(institution.getImage());
+		oldInstitution.setTitle(institution.getTitle());
+
+		jpaInstitutionRepository.save(institution);
+	}
+
 	public List<Institution> getAll() {
 		return jpaInstitutionRepository.findAll();
 	}
