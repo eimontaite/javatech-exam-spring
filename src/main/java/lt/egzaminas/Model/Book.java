@@ -2,21 +2,25 @@ package lt.egzaminas.Model;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import javax.persistence.*;
+import javax.persistence.JoinColumn;
+import javax.validation.constraints.NotNull;
 
 import lt.egzaminas.Model.Institution.Institution;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
-public class Book {
+@Table(name = "book")
+public class Book implements Serializable {
 
     @Id
     @GeneratedValue
+    @NotNull
     private long id;
 
     private String title;
@@ -35,10 +39,10 @@ public class Book {
 
     @ManyToMany(mappedBy = "books")
     @JsonIgnore
-    private Set<Institution> institutions = new HashSet<>();
+    private List<Institution> institutions = new ArrayList<>();
 
     public Book(){
-    	
+
     }
 
     public Book(String title, String author, long pages, String image, double price, String condition, long quantity) {
@@ -115,11 +119,11 @@ public class Book {
         this.quantity = quantity;
     }
 
-    public Set<Institution> getInstitutions() {
+    public List<Institution> getInstitutions() {
         return institutions;
     }
 
-    public void setInstitutions(Set<Institution> institutions) {
+    public void setInstitutions(List<Institution> institutions) {
         this.institutions = institutions;
     }
 }

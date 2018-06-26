@@ -25,57 +25,58 @@ public class InstitutionService {
 	@Autowired
 	private BookService bookService;
 
-	public void addInstitution(InstitutionCreate institutionCreate) {
-		Institution institution = null;
-		switch (institutionCreate.getInstitutionType()) {
-		case ARCHIVE:
-			System.out.println("Book archive");
-			Archive archive = new Archive();
-			archive.setCategory(institutionCreate.getCategory());
-			archive.setCity(institutionCreate.getCity());
-			archive.setImage(institutionCreate.getImage());
-			archive.setTitle(institutionCreate.getTitle());
-			archive.setArchiveType(institutionCreate.getArchiveType());
-			institution = jpaInstitutionRepository.save(archive);
-			break;
+	public Institution addInstitution(Institution institution) {
+		return jpaInstitutionRepository.save(institution);
 
-		case RENTAL:
-			System.out.println("Book rental");
-			Rental rental = new Rental();
-			rental.setCategory(institutionCreate.getCategory());
-			rental.setCity(institutionCreate.getCity());
-			rental.setImage(institutionCreate.getImage());
-			rental.setTitle(institutionCreate.getTitle());
-			rental.setRentalType(institutionCreate.getRentalType());
-			institution = jpaInstitutionRepository.save(rental);
-			break;
-
-		case BOOKSTORE:
-			System.out.println("Bookstore");
-			Bookstore bookstore = new Bookstore();
-			bookstore.setCategory(institutionCreate.getCategory());
-			bookstore.setCity(institutionCreate.getCity());
-			bookstore.setImage(institutionCreate.getImage());
-			bookstore.setTitle(institutionCreate.getTitle());
-			bookstore.setLibraryBookstoreType(institutionCreate.getLibraryBookstoreType());
-			institution = jpaInstitutionRepository.save(bookstore);
-			break;
-			
-		case LIBRARY:
-			System.out.println("Library");
-			Library library = new Library();
-			library.setCategory(institutionCreate.getCategory());
-			library.setCity(institutionCreate.getCity());
-			library.setImage(institutionCreate.getImage());
-			library.setTitle(institutionCreate.getTitle());
-			library.setLibraryBookStoreType(institutionCreate.getLibraryBookstoreType());
-			institution = jpaInstitutionRepository.save(library);
-			break;
-			
-		default:
-			System.out.println("No institution found");
-			break;
-		}
+//		switch (institutionCreate.getInstitutionType()) {
+//		case ARCHIVE:
+//			System.out.println("Book archive");
+//			Archive archive = new Archive();
+//			archive.setCategory(institutionCreate.getCategory());
+//			archive.setCity(institutionCreate.getCity());
+//			archive.setImage(institutionCreate.getImage());
+//			archive.setTitle(institutionCreate.getTitle());
+//			archive.setArchiveType(institutionCreate.getArchiveType());
+//			institution = jpaInstitutionRepository.save(archive);
+//			break;
+//
+//		case RENTAL:
+//			System.out.println("Book rental");
+//			Rental rental = new Rental();
+//			rental.setCategory(institutionCreate.getCategory());
+//			rental.setCity(institutionCreate.getCity());
+//			rental.setImage(institutionCreate.getImage());
+//			rental.setTitle(institutionCreate.getTitle());
+//			rental.setRentalType(institutionCreate.getRentalType());
+//			institution = jpaInstitutionRepository.save(rental);
+//			break;
+//
+//		case BOOKSTORE:
+//			System.out.println("Bookstore");
+//			Bookstore bookstore = new Bookstore();
+//			bookstore.setCategory(institutionCreate.getCategory());
+//			bookstore.setCity(institutionCreate.getCity());
+//			bookstore.setImage(institutionCreate.getImage());
+//			bookstore.setTitle(institutionCreate.getTitle());
+//			bookstore.setLibraryBookstoreType(institutionCreate.getLibraryBookstoreType());
+//			institution = jpaInstitutionRepository.save(bookstore);
+//			break;
+//
+//		case LIBRARY:
+//			System.out.println("Library");
+//			Library library = new Library();
+//			library.setCategory(institutionCreate.getCategory());
+//			library.setCity(institutionCreate.getCity());
+//			library.setImage(institutionCreate.getImage());
+//			library.setTitle(institutionCreate.getTitle());
+//			library.setLibraryBookStoreType(institutionCreate.getLibraryBookstoreType());
+//			institution = jpaInstitutionRepository.save(library);
+//			break;
+//
+//		default:
+//			System.out.println("No institution found");
+//			break;
+//		}
 
 	}
 

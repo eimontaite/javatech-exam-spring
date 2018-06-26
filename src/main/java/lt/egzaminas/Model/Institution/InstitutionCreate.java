@@ -16,11 +16,11 @@ public class InstitutionCreate {
 
     private String category;
 
-    private LibraryBookstoreType libraryBookstoreType;
-
-    private RentalType rentalType;
-
-    private ArchiveType archiveType;
+//    private LibraryBookstoreType libraryBookstoreType;
+//
+//    private RentalType rentalType;
+//
+//    private ArchiveType archiveType;
 
     public InstitutionType getInstitutionType() {
         return institutionType;
@@ -62,27 +62,27 @@ public class InstitutionCreate {
         this.category = category;
     }
 
-    public LibraryBookstoreType getLibraryBookstoreType() {
-        return libraryBookstoreType;
-    }
-
-    public void setLibraryBookstoreType(LibraryBookstoreType libraryBookstoreType) {
-        this.libraryBookstoreType = libraryBookstoreType;
-    }
-
-    public RentalType getRentalType() {
-        return rentalType;
-    }
-
-    public void setRentalType(RentalType rentalType) {
-        this.rentalType = rentalType;
-    }
-
-    public ArchiveType getArchiveType() {
-        return archiveType;
-    }
-
-    public void setArchiveType(ArchiveType archiveType) {
-        this.archiveType = archiveType;
-    }
+//    public LibraryBookstoreType getLibraryBookstoreType() {
+//        return libraryBookstoreType;
+//    }
+//
+//    public void setLibraryBookstoreType(LibraryBookstoreType libraryBookstoreType) {
+//        this.libraryBookstoreType = libraryBookstoreType;
+//    }
+//
+//    public RentalType getRentalType() {
+//        return rentalType;
+//    }
+//
+//    public void setRentalType(RentalType rentalType) {
+//        this.rentalType = rentalType;
+//    }
+//
+//    public ArchiveType getArchiveType() {
+//        return archiveType;
+//    }
+//
+//    public void setArchiveType(ArchiveType archiveType) {
+//        this.archiveType = archiveType;
+//    }
 }

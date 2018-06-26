@@ -2,6 +2,7 @@ package lt.egzaminas.Controller;
 
 
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lt.egzaminas.Model.Book;
 import lt.egzaminas.Service.BookService;
 
@@ -21,6 +22,7 @@ public class BookController {
 
     @PostMapping("/api/books")
     @ResponseStatus(HttpStatus.CREATED)
+    @ApiOperation(value = "New book")
     public Book addBook(@RequestBody final Book book){
         return bookService.addBook(book);
     }

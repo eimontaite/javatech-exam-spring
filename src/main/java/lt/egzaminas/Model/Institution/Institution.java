@@ -1,16 +1,19 @@
 package lt.egzaminas.Model.Institution;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 import lt.egzaminas.Model.Book;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
+@Table(name = "institution")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "institution_type")
-public abstract class Institution {
+public class Institution implements Serializable {
 
     @Id
     @GeneratedValue
@@ -25,7 +28,7 @@ public abstract class Institution {
     private String category;
 
     //Set because MtM requires such; see Book model
-    @ManyToMany
+    @ManyToMany(cascade = {CascadeType.ALL})
     private Set<Book> books = new HashSet<>();
 
     //required constructor

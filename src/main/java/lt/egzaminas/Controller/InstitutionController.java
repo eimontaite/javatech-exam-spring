@@ -24,8 +24,8 @@ public class InstitutionController {
     @PostMapping("/api/institutions")
     @ResponseStatus(HttpStatus.CREATED)
     @ApiOperation(value = "New institution")
-    public void addInstitution(@RequestBody InstitutionCreate institutionCreate){
-        institutionService.addInstitution(institutionCreate);
+    public Institution addInstitution(@RequestBody Institution institution){
+        return institutionService.addInstitution(institution);
     }
 
     @GetMapping("/api/institutions/{institutionId}")
